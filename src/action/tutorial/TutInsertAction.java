@@ -28,7 +28,8 @@ public class TutInsertAction extends Action{
 		
 		tutorial.setTitle(tutorialForm.getTitle());
 		tutorial.setPositive(tutorialForm.getPositive());
-		tutorial.equals(tutorialForm.isActive());
+		tutorial.setActive(tutorialForm.isActive());
+		tutorial.setCateId(tutorialForm.getCateId());
 		
 		tutorialBO.insertTutorial(tutorial);
 		

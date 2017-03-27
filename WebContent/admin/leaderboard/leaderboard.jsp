@@ -105,7 +105,7 @@
 						        <th data-field="leadId"  data-sortable="true">leadId</th>
 						        <th data-field="subId"  data-sortable="true">subId</th>
 						         <th data-field="userId"  data-sortable="true">userId</th>
-						        <th data-field="codeId"  data-sortable="true">CodeID</th>
+						        <th data-field="codeId"  data-sortable="true">SubmitId</th>
 								<th data-field="process" data-sortable="true" class="chucnang">function</th>
 						    </tr>
 							
@@ -117,7 +117,7 @@
 								<td><jsp:getProperty name="leaderboard" property="leadId"/> </td>
 								<td><jsp:getProperty name="leaderboard" property="subId"/> </td>
 								<td><jsp:getProperty name="leaderboard" property="userId"/> </td>
-								<td><jsp:getProperty name="leaderboard" property="codeId"/> </td>
+								<td><jsp:getProperty name="leaderboard" property="submitId"/> </td>
 								
 								
 								

@@ -134,7 +134,7 @@
 									          <p>Are you sure you want to delete?</p>
 									        </div>
 									        <div class="modal-footer">
-									          <html:link action="/delete-status.do?codeId=${idstatus}" styleClass="btn btn-danger">OK</html:link>
+									          <html:link action="/delete-status.do?statusId=${idstatus}" styleClass="btn btn-danger">OK</html:link>
 									          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 									        </div>
 									      </div>

@@ -115,17 +115,9 @@
 									<html:text styleClass="form-control" property="active"></html:text>
 								</div>
 								<div class="form-group">
-									<label>cateId</label>
+									<label>Categories</label>
 									<html:select styleClass="form-control" property="cateId">
-									
-									<logic:iterate id="subject" name="tutorialForm" property="subjectList" >
-									<bean:define id="idSub" name="subject" property="cateId" ></bean:define>
-									
-									<html:option value="${idSub }">
-										<jsp:setProperty property="cateId" name="subject"/>
-											
-									</html:option>
-									</logic:iterate>
+									<html:optionsCollection name="tutorialForm" property="cateList" label="name" value="cateId"/>
 									</html:select>
 									
 								</div>

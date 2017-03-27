@@ -3,6 +3,7 @@ package action.tutorial;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.bo.CategoriesBO;
 import model.bo.SubjectBO;
 
 import org.apache.struts.action.Action;
@@ -21,9 +22,9 @@ public class TutPrepareInsertAction extends Action {
 		
 		TutorialForm tutorialForm = (TutorialForm)form;
 		
-		SubjectBO subjectBO = new SubjectBO();
+		CategoriesBO categoriesBO=new CategoriesBO();
 		
-		tutorialForm.setSubjectList(subjectBO.getAllSubject());
+		tutorialForm.setCateList(categoriesBO.getAllCategories());
 		
 		return mapping.findForward("thanhCong");
 	}

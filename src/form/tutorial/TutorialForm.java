@@ -2,6 +2,7 @@ package form.tutorial;
 
 import java.util.ArrayList;
 
+import model.bean.Categories;
 import model.bean.Subject;
 import model.bean.Tutorial;
 
@@ -14,7 +15,7 @@ public class TutorialForm extends ActionForm {
 	private int positive;
 	private boolean active;
 	private ArrayList<Tutorial> tutorialList;
-	private ArrayList<Subject> subjectList;
+	private ArrayList<Categories> cateList;
 
 	public int getTuId() {
 		return tuId;
@@ -71,12 +72,19 @@ public class TutorialForm extends ActionForm {
 		this.tutorialList = tutorialList;
 	}
 
-	public ArrayList<Subject> getSubjectList() {
-		return subjectList;
+	/**
+	 * @return the cateList
+	 */
+	public ArrayList<Categories> getCateList() {
+		return cateList;
 	}
 
-	public void setSubjectList(ArrayList<Subject> subjectList) {
-		this.subjectList = subjectList;
+	/**
+	 * @param cateList
+	 *            the cateList to set
+	 */
+	public void setCateList(ArrayList<Categories> cateList) {
+		this.cateList = cateList;
 	}
 
 }

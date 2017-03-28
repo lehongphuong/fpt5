@@ -11,6 +11,7 @@ public class HomeForm extends ActionForm {
 	private String userId;
 	private String username;
 	private String password;
+	private String rePassword;
 	private String avatar;
 	private String university;
 	private String point;
@@ -20,6 +21,21 @@ public class HomeForm extends ActionForm {
 	private ArrayList<Categories> cateList;
 
 	private String statusLogin;
+
+	/**
+	 * @return the rePassword
+	 */
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	/**
+	 * @param rePassword
+	 *            the rePassword to set
+	 */
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
+	}
 
 	public String getStatusLogin() {
 		return statusLogin;

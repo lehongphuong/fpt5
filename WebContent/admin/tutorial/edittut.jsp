@@ -95,7 +95,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Edit Tutorial</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/update-tutorial.do" method="post">
 								<div class="form-group">
 									<label>ID</label>

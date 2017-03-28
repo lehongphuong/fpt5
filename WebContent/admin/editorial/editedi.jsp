@@ -101,7 +101,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Edit Editorial</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/update-editorial.do">
 								<div class="form-group">
 									<div class="form-group">
@@ -118,10 +118,10 @@
 										<label>Explain</label>
 										<html:textarea styleClass="ckeditor" cols="70" rows="3" property="explain"></html:textarea>	
 									</div>
-									<div class="form-group">
-										<label>Code</label>
-										<html:textarea styleClass="ckeditor" cols="70" rows="3" property="code"></html:textarea>	
-									</div>
+								<div class="form-group">
+								  <label for="comment">Code:</label>
+								  <html:textarea styleClass="form-control" rows="5" property="code" styleId="code"></html:textarea>
+								</div>
 								<button type="submit" class="btn btn-primary">Edit</button>
 								<button type="reset" class="btn btn-default">Cancel</button>	
 							</div>							

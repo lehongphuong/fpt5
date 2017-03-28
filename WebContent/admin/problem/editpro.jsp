@@ -19,7 +19,7 @@
 
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
-<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="admin/js/ckeditor/ckeditor.js"></script>
  <!-- library -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
       <!-- CSS -->
@@ -100,45 +100,42 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Edit Problem</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/update-problem.do">
 							
 								<div class="form-group">
 									<label>proId</label>
 									<html:text styleClass="form-control" property="proId" readonly="true"  ></html:text>
-									
-									<label>Name subject</label>
-									<html:select styleClass="form-control" property="subId">
-										<html:optionsCollection name="problemForm" property="subjectList" label="title" value="subId"/>
-									</html:select>
+								<html:select styleClass="form-control" property="subId">
+                                <html:optionsCollection name="problemForm" property="subjectList" label="title" value="subId"/>
+                                 </html:select>
 									
 									
 									
 									<label>SubId</label>
 									<html:text styleClass="form-control" property="subId" readonly="true"  ></html:text>
 									<label>Description</label>
-									<html:text styleClass="form-control" property="description"  ></html:text>	
-									<label>Constrain</label>
-									<html:text styleClass="form-control" property="constrain"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="description"></html:textarea>
 									<label>InputRequire</label>
-									<html:text styleClass="form-control" property="inputRequire"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="inputRequire"></html:textarea> 
 									<label>OutputRequire</label>
-									<html:text styleClass="form-control" property="outputRequire"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="outputRequire"></html:textarea> 
 									<label>InputTestcase</label>
-									<html:text styleClass="form-control" property="inputTestCase"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="inputTestCase"></html:textarea> 
 									<label>OutputTestCase</label>
-									<html:text styleClass="form-control" property="outputTestCase"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="outputTestCase"></html:textarea> 
 									<label>Explain</label>
-									<html:text styleClass="form-control" property="explain"  ></html:text>
+									<html:textarea styleClass="ckeditor" cols="100" rows="3" property="explain"></html:textarea> 
 									<label>InputUser</label>
 									<html:text styleClass="form-control" property="inputUser"  ></html:text>
 																																	
 								</div>
 								<button type="submit" class="btn btn-primary">Edit</button>
 								<button type="reset" class="btn btn-default">Cancel</button>
-							</div>							
 								
-						</html:form>
+								</html:form>
+							</div>							
+						
 					</div>
 				</div>
 			</div><!-- /.col-->

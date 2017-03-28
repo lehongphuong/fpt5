@@ -70,7 +70,7 @@ public class StatusDAO {
 	}
 
 	public void insertStatus(Status Status) {
-		String sql = "insert into Status values(?,?,?)";
+		String sql = "insert into Status(userId, subId, status) values(?,?,?)";
 		try {
 			PreparedStatement pr = con.prepareStatement(sql);
 			pr.setInt(1, Status.getUserId());

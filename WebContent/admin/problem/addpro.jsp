@@ -10,7 +10,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add_Problem</title>
 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="admin/css/bootstrap.min.css" rel="stylesheet">
 <link href="admin/css/datepicker3.css" rel="stylesheet">
 <link href="admin/css/bootstrap-table.css" rel="stylesheet">
@@ -19,7 +21,8 @@
 <link href="admin/css/font-awesome.min.css" rel="stylesheet">
 
 <!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
+<script src="admin/js/lumino.glyphs.js"></script>
+<script type="text/javascript" src="admin/js/ckeditor/ckeditor.js"></script>
  <!-- library -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
       <!-- CSS -->
@@ -99,27 +102,21 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Problem</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/add-problem.do" method="post">
 							
 							
-							<label>Name subject</label>
-									<html:select styleClass="form-control" property="subId">
-										<html:optionsCollection name="problemForm" property="subjectList" label="title" value="subId"/>
-									</html:select>
+								<label>Name subject</label>
+								<html:select styleClass="form-control" property="subId">
+									<html:optionsCollection name="problemForm" property="subjectList" label="title" value="subId"/>
+								</html:select>
 										
 							
 								<div class="form-group">
 									<label>description</label>
-									<html:text styleClass="form-control"
-									 property="description"></html:text>
+									 <html:textarea styleClass="ckeditor" cols="70" rows="3" property="description"></html:textarea>
 								</div>
 								
-							
-								<div class="form-group">
-									<label>constrain</label>
-									<html:textarea styleClass="ckeditor" cols="70" rows="3" property="constrain"></html:textarea>
-								</div>
 								<div class="form-group">
 									<label>inputRequire</label>
 									<html:textarea styleClass="ckeditor" cols="70" rows="3" property="inputRequire"></html:textarea>
@@ -148,10 +145,13 @@
 								
 								
 									<html:submit styleClass="btn btn-primary">Add</html:submit>
-								<button type="reset" class="btn btn-default">Cancel</button></div>	
+								<button type="reset" class="btn btn-default">Cancel</button>
+								</html:form>
+								
+								</div>
 							</div>	
 								
-							</html:form>
+							
 								
 						
 					</div>
@@ -162,14 +162,13 @@
 	</div><!--/.main-->
 
 	
-	<script src="../js/jquery-1.11.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/chart.min.js"></script>
-	<script src="../js/chart-data.js"></script>
-	<script src="../js/easypiechart.js"></script>
-	<script src="../js/easypiechart-data.js"></script>
-	<script src="../js/bootstrap-datepicker.js"></script>
-	<script src="../js/bootstrap-table.js"></script>
+	<script src="admin/js/jquery-1.11.1.min.js"></script>
+	<script src="admin/js/bootstrap.min.js"></script>
+	<script src="admin/js/chart.min.js"></script>
+	<script src="admin/js/chart-data.js"></script>
+	<script src="admin/js/easypiechart.js"></script>
+	<script src="admin/js/easypiechart-data.js"></script>
+	<script src="admin/js/bootstrap-datepicker.js"></script>
 	<script>
 		!function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  

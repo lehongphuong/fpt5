@@ -91,7 +91,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Edit Subject</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/update-subject.do">
 								
 								<div class="form-group">
@@ -123,9 +123,11 @@
 									<html:submit styleClass="btn btn-primary">Edit</html:submit>
 									<button type="reset" class="btn btn-default">Cancel</button>
 								</div>
+								
+								</html:form>
 							</div>							
 								
-						</html:form>
+						
 					</div>
 				</div>
 			</div><!-- /.col-->

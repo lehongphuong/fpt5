@@ -276,6 +276,7 @@ public class ChallengesAction extends Action {
 					}
 				}
 				// 3. point
+				userBO.updatePointUser(userId);
 
 			}
 			challengesForm.setCodeSample(codeSample);

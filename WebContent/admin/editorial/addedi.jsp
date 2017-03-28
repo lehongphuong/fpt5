@@ -101,7 +101,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Editorial</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 								<html:form action="/add-editorial.do"  method="post">
 							 
 							 	<html:select styleClass="form-control" property="subId">
@@ -115,8 +115,8 @@
 								</div>
 								
 								<div class="form-group">
-									<label>Code</label>
-									<html:textarea styleClass="ckeditor" cols="70" rows="3" property="code"></html:textarea>
+								  <label for="comment">Code:</label>
+								  <html:textarea styleClass="form-control" rows="5" property="code" styleId="code"></html:textarea>
 								</div>
 								
 								 																

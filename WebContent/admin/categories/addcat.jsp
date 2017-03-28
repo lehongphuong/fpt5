@@ -101,7 +101,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Category</div>
 					<div class="panel-body">
-						<div class="col-md-6">												
+						<div class="col-lg-12">												
 						<html:form action="/add-categories.do" method="post">
 
 									<html:select styleClass="form-control" property="menuId">
@@ -113,10 +113,13 @@
 									<html:textarea styleClass="ckeditor" cols="70" rows="3" property="name"></html:textarea>
 								</div>																 																
 									<html:submit styleClass="btn btn-primary">Add</html:submit>
-								<button type="reset" class="btn btn-default">Cancel</button></div>	
+								<button type="reset" class="btn btn-default">Cancel</button>	
+								
+								</html:form>
+								</div>
 							</div>														
 								
-						</html:form>
+						
 					</div>
 				</div>
 			</div><!-- /.col-->

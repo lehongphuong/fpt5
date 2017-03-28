@@ -1,16 +1,9 @@
-package action;
+package action.account;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import model.bean.Categories;
-import model.bean.Menu;
-import model.bean.User;
-import model.bo.CategoriesBO;
-import model.bo.MenuBO;
-import model.bo.UserBO;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -18,15 +11,21 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import common.MyCookie;
-
 import form.HomeForm;
+import form.account.AccountForm;
+import model.bean.Categories;
+import model.bean.Menu;
+import model.bean.User;
+import model.bo.CategoriesBO;
+import model.bo.MenuBO;
+import model.bo.UserBO;
 
-public class RegisterAction extends Action{
-	
+public class PrepareEditAccountAction extends Action {
+
 	@Override
-	public ActionForward execute(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
 		HomeForm homeForm = (HomeForm) form;
 		UserBO userBO = new UserBO();
 
@@ -41,27 +40,6 @@ public class RegisterAction extends Action{
 			statusLogin = "notLogin";
 			myCookie.setCookie("statusLogin", statusLogin);
 		}
-		
-		// kiem tra va lay thong tin neu dang nhap thanh cong
-		if ("notLogin".equals(statusLogin)) {
-			// dang nhap thanh cong
-			User user1=new User();
-			String username=homeForm.getUsername();
-			String password=homeForm.getPassword();
-			
-			user1.setUsername(username);
-			user1.setPassword(password);
-			
-			System.out.println(username+" "+password+" "+userBO.isUser(user));
-			int id=userBO.insertUser(user1);
-			statusLogin = "login";
-			myCookie.setCookie("statusLogin", statusLogin);
-			myCookie.setCookie("userId", id+"");
-			
-		}
-		homeForm.setStatusLogin(statusLogin);
-		
-		
 
 		// kiem tra va lay thong tin neu dang nhap thanh cong
 		if ("login".equals(statusLogin)) {
@@ -90,6 +68,8 @@ public class RegisterAction extends Action{
 
 		homeForm.setMenuList(menuList);
 		homeForm.setCateList(cateList);
+		 
+		
 
 		return mapping.findForward("thanhCong");
 	}

@@ -89,14 +89,14 @@ public class TutorialAction extends Action {
 
 		// tao bien editor mirror code edittor
 		tf.setEditor("html");
-		if ("6".equals(cateId)) {
+		if ("7".equals(cateId)) {
 			tf.setEditor("cpp");
 		}
-		if ("7".equals(cateId)) {
+		if ("8".equals(cateId)) {
 
 			tf.setEditor("java");
 		}
-		if ("8".equals(cateId)) {
+		if ("9".equals(cateId)) {
 			tf.setEditor("python");
 		}
 

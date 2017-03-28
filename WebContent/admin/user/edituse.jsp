@@ -91,7 +91,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Edit User</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/update-user.do">
 							
 								<div class="form-group">
@@ -123,10 +123,11 @@
 									</html:select>
 								</div>
 								<button type="submit" class="btn btn-primary">Edit</button>
-								<button type="reset" class="btn btn-default">Cancel</button>
+								<button onclick="history.go(-1);" class="btn btn-default">Cancel</button>
+								</html:form>
 							</div>			
 								
-						</html:form>
+						
 					</div>
 				</div>
 			</div><!-- /.col-->

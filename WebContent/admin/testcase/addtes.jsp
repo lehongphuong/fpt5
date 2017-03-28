@@ -97,7 +97,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Testcase</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 									
 							<html:form action="/add-testcase.do"  method="post">              
                                <html:select styleClass="form-control" property="subId">
@@ -120,22 +120,10 @@
 									<html:text styleClass="form-control" 
 										property="timeAsk" ></html:text>
 								</div>
-								<div class="form-group">
-									<label>SubID</label>
-									<select name="subid" class="form-control">
-										<option value="0">--Chọn SubID-</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-									</select>
-								</div>
 								<button type="submit" class="btn btn-primary">Add</button>
 								<button type="reset" class="btn btn-default">Cancel</button>
 								</html:form>
-							</div>				
-								
-						</form>
+							</div>	 
 					</div>
 				</div>
 			</div><!-- /.col-->

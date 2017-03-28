@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnect {
-	static String url = "jdbc:sqlserver://localhost:1433;databaseName=FPT2";
+	static String url = "jdbc:sqlserver://localhost:1433;databaseName=FPT5";
 	static String userName = "sa";
 	static String password = "12345678";
 	static Connection connection;

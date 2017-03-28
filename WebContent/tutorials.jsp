@@ -28,6 +28,7 @@
    
    <!-- Customizer -->
     <link rel="stylesheet" href="css/customizer.min.css">
+    <link href="css/table.css" rel="stylesheet">
    
    <style>.CodeMirror {border: 25px inset #dee;}</style>
    <!-- /mirror editor-->
@@ -240,6 +241,120 @@
 </header>
 <!--Main layout-->
 
+
+
+
+
+<!-- Modal Login -->
+            <div class="modal fade modal-ext" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <!--Content-->
+                    <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+                            <h3 class="w-100"><i class="fa fa-user"></i>Login</h3>
+                        </div>
+                        <!--Body-->
+                        <html:form action="/user-login">
+                            <div class="modal-body">
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <html:text property="username" styleId="form2" styleClass="form-control"></html:text>
+                                    <label for="form2">Your email</label>
+                                </div>
+
+                                <div class="md-form">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <html:password property="password" styleId="form3" styleClass="form-control"></html:password>
+                                    <label for="form3">Your password</label>
+                                </div>
+                                <div class="text-center">
+                                    <html:submit styleClass="btn btn-primary btn-md">Login</html:submit>
+                                </div>
+                            </div>
+                        </html:form>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                            </div>
+                            <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Content-->
+                </div>
+            </div>
+
+
+
+            <!-- Modal Register -->
+            <div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <!--Content-->
+                    <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header flex-column">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+                            <h3 class="w-100"><i class="fa fa-user"></i> Register with:</h3>
+                            <div class="flex-row">
+                                <a href="" class="btn-floating btn-fb btn-small"><i class="fa fa-facebook"></i></a>
+                                <a href="" class="btn-floating btn-tw btn-small"><i class="fa fa-twitter"></i></a>
+                                <a href="" class="btn-floating btn-gplus btn-small"><i class="fa fa-google-plus"></i></a>
+                                <a href="" class="btn-floating btn-li btn-small"><i class="fa fa-linkedin"></i></a>
+                                <a href="" class="btn-floating btn-git btn-small"><i class="fa fa-github"></i></a>
+                            </div>
+                        </div>
+                        <!--Body-->
+                        <html:form action="/user-register.do">
+                        <div class="modal-body">
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <html:text property="username" styleClass="form-control validate"/>
+                                <label for="form2">Your email</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <html:password property="password" styleClass="form-control validate"/>
+                                <label for="form3">Your password</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <html:password property="rePassword" styleClass="form-control validate"/>
+                                <label for="form4">Repeat password</label>
+                            </div>
+
+                            <div class="text-center">
+                                <html:submit styleClass="btn btn-primary btn-lg">Sign up</html:submit>
+
+                                <fieldset class="form-group">
+                                    <input type="checkbox" id="checkbox1">
+                                    <label for="checkbox1">Subscribe me to the newsletter</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                        </html:form>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options"> 
+                            </div>
+                            <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Content-->
+                </div>
+            </div>
+
+
+
+
+
+
 <div class="container-fluid row">
  <div id="left" class="col-lg-3">
   <!-- Sidebar navigation -->
@@ -349,7 +464,7 @@
      	<h4><span class="label label-info">C++ editor</span></h4>
      	<bean:define id="code" name="tutCode" property="code"/>
      	
-	   <html:form action="/list-tutorial.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=cpp&run=true"
+	   <html:form action="/list-tutorial-main.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=cpp&run=true"
 	    method="post">   
 	   <html:textarea name="tutorialFormMain" property="code" value="${code}" styleId="code-html${tutCodeId}">
  
@@ -379,7 +494,7 @@
      	<h4><span class="label label-info">Python editor</span></h4>
      	<bean:define id="code" name="tutCode" property="code"/>
      	
-	   <html:form action="/list-tutorial.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=python&run=true"
+	   <html:form action="/list-tutorial-main.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=python&run=true"
 	    method="post">   
 	   <html:textarea name="tutorialFormMain" property="code" value="${code}" styleId="code-html${tutCodeId}">
  
@@ -411,7 +526,7 @@
      	<h4><span class="label label-info">Java editor</span></h4> 
      	<bean:define id="code" name="tutCode" property="code"/>
      	
-	   <html:form action="/list-tutorial.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=java&run=true"
+	   <html:form action="/list-tutorial-main.do?menuId=${param.menuId}&cateId=${param.cateId}&tutId=${param.tutId}&tutCodeId=${tutCodeId}&language=java&run=true"
 	    method="post">   
 	   <html:textarea name="tutorialFormMain" property="code" value="${code}" styleId="code-html${tutCodeId}">
  
@@ -512,95 +627,6 @@
 
 
 
-<!--Footer-->
-<footer class="page-footer center-on-small-only clearFix" >
-
-  <!--Footer Links-->
-  <div class="container-fluid">
-    <div class="row">
-
-      <!--First column-->
-      <div class="col-md-3 offset-md-1">
-        <h5 class="title">FPT CODING PROGRAM</h5>
-        <p>Team 11 INTERN in FPTSoftware.</p>
-      </div>
-      <!--/.First column-->
-
-      <hr class="hidden-md-up">
-
-      <!--Second column-->
-      <div class="col-md-2 offset-md-1">
-        <h5 class="title">My's name team</h5>
-        <ul>
-          <li class1="animated bounce infinite"><a href="#!">Lê Hồng Phương</a></li>
-          <li><a href="#!">Võ Thị Ngọc Hiền</a></li>
-          <li><a href="#!">Nguyễn Thị Nương</a></li>
-          <li><a href="#!">Võ Văn Hòa</a></li>
-          <li><a href="#!">Nguyễn Duy Thức</a></li>
-        </ul>
-      </div>
-      <!--/.Second column-->
-
-      <hr class="hidden-md-up">
-
-      <!--Third column-->
-      <div class="col-md-2">
-        <h5 class="title">Devoloper</h5>
-        <ul>
-          <li><a href="#!">© Full Stack ©</a></li>
-          <li><a href="#!">Front End & Content</a></li>
-          <li><a href="#!">Front End & Content</a></li>
-          <li><a href="#!">Coding & Front End</a></li>
-          <li><a href="#!">Coding & Designer</a></li>
-        </ul>
-      </div>
-      <!--/.Third column-->
-
-      <hr class="hidden-md-up">
-
-      <!--Fourth column-->
-      <div class="col-md-3">
-        <h5 class="title">University</h5>
-        <ul>
-          <li><a href="#!">Phạm Văn Đồng - Quảng Ngãi</a></li>
-          <li><a href="#!">Kinh Tế Huế - Huế</a></li>
-          <li><a href="#!">Phạm Văn Đồng - Quảng Ngãi</a></li>
-          <li><a href="#!">Quảng Nam - Quảng Nam</a></li>
-          <li><a href="#!">Quảng Nam - Quảng Nam</a></li>
-        </ul>
-      </div>
-      <!--/.Fourth column-->
-
-    </div>
-  </div>
-  <!--/.Footer Links-->
-
-
-  <!--Social buttons-->
-  <div class="social-section">
-    <ul>
-      <li><a class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-git"><i class="fa fa-github"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-pin"><i class="fa fa-pinterest"> </i></a></li>
-      <li><a class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
-    </ul>
-  </div>
-  <!--/.Social buttons-->
-
-  <!--Copyright-->
-  <div class="footer-copyright">
-    <div class="container-fluid">
-      © 2017 Copyright: <a href="https://www.dct13.appsot.com"> Lehongphuong.io </a>
-
-    </div>
-  </div>
-  <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
 
 
 
@@ -617,6 +643,7 @@
 
 
 <!-- SCRIPTS -->
+<script src="js/bootstrap-table.js"></script>    
 <script type="text/javascript" src="js/compiled.min.js"></script>
 <script>
  $(".button-collapse").sideNav();

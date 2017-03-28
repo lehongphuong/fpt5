@@ -10,25 +10,51 @@ import java.net.URLEncoder;
 
 import model.bean.Response;
 
-public class CompilerCode {
+public class Test {
 
 	private static final String USER_AGENT = "Mozilla/5.0";
 
-	private static final String POST_URL = "https://compile-public-low.remoteinterview.io/compile";
+	private static final String POST_URL = "https://tools.tutorialspoint.com/compile_new.php";
 
 	private String language;
 	private String code;
 	private String userInput;
 	private String postParams;
 
-	public CompilerCode() {
+	public Test() {
 		super();
 	}
 
-	public CompilerCode(String language, String code, String userInput) {
+	public Test(String language, String code, String userInput) {
 		super();
+		this.language = language;
+		this.code = code;
+		this.userInput = userInput;
+
+		if ("cpp".equals(language)) {
+			postParams = "language=7&code=";
+		}
+		if ("java".equals(language)) {
+			postParams = "language=8&code=";
+		}
+		if ("python".equals(language)) {
+			postParams = "language=0&code=";
+		}
+		if ("php".equals(language)) {
+			postParams = "language=3&code=";
+		}
+
+		try {
+			code = URLEncoder.encode(code, "UTF-8");
+			postParams += code + "&stdin=" + userInput + "&name=asdf";
+			String post="lang=c%2B%2Bstd&code=%23include+%3Ciostream%3E%0D%0Ausing+namespace+std%3B%0D%0A%0D%0Aint+main()+%7B%0D%0A+++cout+%3C%3C+%22Hello+World%22%3B%0D%0A+++return+0%3B%0D%0A%7D&support=&util=&extra=&script=compile_new&inputs=&filename=&process=1490690835_60548&root=%2Fweb%2Fcom%2F1490690835_60548";
+			postParams=post;
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		postParams="lang=c%2B%2Bstd&code=%23include+%3Ciostream%3E%0D%0Ausing+namespace+std%3B%0D%0A%0D%0Aint+main()+%7B%0D%0A+++cout+%3C%3C+%22Hello+World%22%3B%0D%0A+++return+0%3B%0D%0A%7D&support=&util=&extra=&script=compile_new&inputs=&filename=&process=1490690835_60548&root=%2Fweb%2Fcom%2F1490690835_60548";
+//		postParams += code + "&stdin=" + userInput + "&name=asdf";
 
 	}
 
@@ -42,16 +68,15 @@ public class CompilerCode {
 
 		String response = code.runCodeC();
 
-		Response res = new Response(response);
-
-		System.out.println(res.getCode());
-		System.out.println(res.getOutput());
-		System.out.println(res.getErrors());
+		 
+		 
 
 	}
 
 	public String runCodeC() {
 		String result = "";
+		
+		
 		try {
 			URL obj = new URL(POST_URL);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -82,7 +107,7 @@ public class CompilerCode {
 				result = response.toString();
 
 				// print result
-				 System.out.println(response.toString());
+//				 System.out.println(response.toString());
 			} else {
 				// System.out.println("POST request not worked");
 			}

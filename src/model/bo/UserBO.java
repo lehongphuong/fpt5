@@ -50,8 +50,8 @@ public class UserBO {
 		return dao.getAllUser();
 	}
 
-	public void insertUser(User user) {
-		dao.insertUser(user);
+	public int insertUser(User user) {
+		return dao.insertUser(user);
 
 	}
 
@@ -64,5 +64,14 @@ public class UserBO {
 	public void deleteUser(int userId) {
 		dao.deleteUser(userId);
 	}
+	
+	/**
+	 * update user point
+	 * @param userId
+	 */
+	public void updatePointUser(String userId) {
+		dao.updatePointUser(userId);
+	}
+	
 
 }

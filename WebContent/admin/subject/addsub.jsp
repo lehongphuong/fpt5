@@ -91,7 +91,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Subject</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/add-subject.do" method="post">
 							 
 								
@@ -121,8 +121,9 @@
 								
 								<html:submit styleClass="btn btn-primary">Add</html:submit>
 								<button type="reset" class="btn btn-default">Cancel</button>
+								</html:form>
 							</div>	
-						</html:form>
+						
 					</div>
 				</div>
 			</div><!-- /.col-->

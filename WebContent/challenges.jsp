@@ -307,19 +307,32 @@
           
           
           <div>
-          <bean:define id="description" name="prob" property="description"/>
+          
+          <logic:notEqual name="prob" property="description" value="">
+           <bean:define id="description" name="prob" property="description"/>
           
       		${description }
+          
+          </logic:notEqual>
+         
       		 
             
           </div>
           <div class="input-specification">
             <div class="section-title">Input</div>
-            <bean:write name="prob" property="inputRequire"/>
+           <logic:notEqual name="prob" property="inputRequire" value="">
+          	<bean:define id="inputRequire" name="prob" property="inputRequire"/>
+      		${inputRequire }
+          
+          </logic:notEqual>
+            
           </div>
           <div class="output-specification">
             <div class="section-title">Output</div>
-            <bean:write name="prob" property="outputRequire"/>
+            <logic:notEqual name="prob" property="outputRequire" value="">
+          	<bean:define id="outputRequire" name="prob" property="outputRequire"/>
+      		${outputRequire }
+          </logic:notEqual>
           </div>
           <div class="sample-tests">
             <div class="section-title">Examples</div>
@@ -327,10 +340,19 @@
               <div class="input">
                 <div class="title">Input</div>
                 
-                <pre><bean:write name="prob" property="inputTestCase"/></pre>
+           <logic:notEqual name="prob" property="inputTestCase" value="">
+          	<bean:define id="inputTestCase" name="prob" property="inputTestCase"/>
+      		<pre>${inputTestCase } </pre>
+          </logic:notEqual>
+                
+                
               </div>
               <div class="output">
                 <div class="title">Output</div>
+          <logic:notEqual name="prob" property="outputTestCase" value="">
+          	<bean:define id="outputTestCase" name="prob" property="outputTestCase"/>
+      		<pre>${outputTestCase} </pre>
+          </logic:notEqual>
                 <pre><bean:write name="prob" property="outputTestCase"/></pre>
               </div>
               
@@ -338,9 +360,15 @@
           </div>
           <div class="note">
             <div class="section-title">Explain</div>
+            
+            
+            <logic:notEqual name="prob" property="explain" value="">
             <p><bean:define id="explain" name="prob" property="explain"/></p>
               
       		${explain }
+          
+          </logic:notEqual>
+           
       		
           </div>
           
@@ -745,9 +773,14 @@ $(document).ready(function() {
 <bean:define id="edit" name="challengesForm" property="editorial"/>   
 <div class="tab-pane" id="panel86" role="tabpanel">
  
-	<bean:define id="exp" name="edit" property="explain" ></bean:define>
+	
+      
+      <logic:notEqual name="edit" property="explain" value="">
+      
+      <bean:define id="exp" name="edit" property="explain" ></bean:define>
  
-      ${exp }
+      	${exp }
+      </logic:notEqual>
       
 	  <pre class="code-toolbar language-markup">
 <code class=" language-markup"><bean:write name="edit" property="code"/></code>

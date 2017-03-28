@@ -101,21 +101,43 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add menu</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/add-menu.do" method="post">
 
 								<div class="form-group">
 									<label>Name</label>
 									<html:text styleClass="form-control" 
-										property="name" ></html:text>
+										property="name" styleId="name"></html:text>
 									<label>positive</label>
 									<html:text styleClass="form-control"
-										  property="positive"></html:text>
+										  property="positive" styleId="positive"></html:text>
 								</div>
 								<html:submit styleClass="btn btn-primary">Add</html:submit>
-								<button type="reset" class="btn btn-default">Cancel</button></div>								
-								
+								<button type="reset" class="btn btn-default">Cancel</button>
+									
 							</html:form>
+							</div>								
+							
+							
+							
+					<script>
+					/* styleId="" */
+					$(document).ready(function(){
+						 $("#positive").click(function(){
+							 //check cmnd
+							 var cmnd=$("#name").val();
+						        if(cmnd=='') alert("Field name is NULL Please input Again!");
+						    });
+						 $("#positive").keyup(function(){
+							 var so=$("#positive").val();
+							 if(so<0) alert("Field positive > 0  please!");
+						       
+						 });
+					});
+					 
+					</script>
+							
+							
 					</div>
 				</div>
 			</div><!-- /.col-->

@@ -48,6 +48,8 @@
       <script src="addon/edit/matchbrackets.js"></script>
 
       <script src="doc/activebookmark.js"></script>
+      
+      <link href="css/table.css" rel="stylesheet">
        
    </head>
 
@@ -342,7 +344,23 @@
          <hr>
       </div>
       
+      
+      <table data-toggle="table" data-pagination="true" >
+	    <thead>
+	    <tr>
+	        <th></th>
+	    </tr>
+		
+	    </thead>
+		<tbody>
+		
       <logic:iterate name="practicsForm" property="subList" id="sub">
+      	
+      
+      
+      <tr><td>
+      
+      
       	<bean:define id="subId" name="sub" property="subId"></bean:define>
     	<bean:define id="successRate" name="sub" property="successRate"></bean:define>
     	<bean:define id="maxScore" name="sub" property="maxScore"></bean:define>
@@ -405,10 +423,14 @@
             </div>
             <!--/.Card Light-->
          </div>
-    		
+			 </td> 
+		</tr>
+						 
    	</logic:iterate>
-
-      
+   		
+							
+			</tbody>
+		</table>
 
          
       
@@ -578,6 +600,7 @@
 
       </script>
       <!-- SCRIPTS -->
+      <script src="js/bootstrap-table.js"></script>
       <!-- JQuery -->
       <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
       <!-- Bootstrap tooltips -->

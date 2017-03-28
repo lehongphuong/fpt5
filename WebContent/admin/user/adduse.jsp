@@ -91,7 +91,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add User</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 							<html:form action="/add-user.do" method="post">
 							
 								<div class="form-group">
@@ -117,7 +117,7 @@
 									</html:select>
 								</div>
 								<html:submit styleClass="btn btn-primary">Add</html:submit>
-								<a href="/FPT/list-user.do"><button type="reset" class="btn btn-default">Cancel</button></a>
+								<a href="/FPT/list-user.do"><button onclick="history.go(-1);" class="btn btn-default">Cancel</button></a>
 							</html:form>
 						</div>	
 					</div>

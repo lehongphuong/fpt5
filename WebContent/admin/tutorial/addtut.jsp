@@ -102,7 +102,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Add Tutorial</div>
 					<div class="panel-body">
-						<div class="col-md-6">
+						<div class="col-lg-12">
 						<html:form action="/add-tutorial.do" method="post">
 													
 								<div class="form-group">
